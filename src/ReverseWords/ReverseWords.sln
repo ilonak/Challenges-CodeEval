@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseWords", "ReverseWords.csproj", "{71642CA7-66B1-42F3-92B3-FBE407E027CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseWords.Tests", "..\UnitTesting\ReverseWords.Tests\ReverseWords.Tests.csproj", "{FCB96D1C-C6B5-493B-93B2-277E1DC35481}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTesting", "UnitTesting", "{7A2AADEC-AD6E-4BD6-B39A-160A1522D1F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,15 @@ Global
 		{71642CA7-66B1-42F3-92B3-FBE407E027CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71642CA7-66B1-42F3-92B3-FBE407E027CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71642CA7-66B1-42F3-92B3-FBE407E027CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB96D1C-C6B5-493B-93B2-277E1DC35481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB96D1C-C6B5-493B-93B2-277E1DC35481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB96D1C-C6B5-493B-93B2-277E1DC35481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB96D1C-C6B5-493B-93B2-277E1DC35481}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FCB96D1C-C6B5-493B-93B2-277E1DC35481} = {7A2AADEC-AD6E-4BD6-B39A-160A1522D1F8}
 	EndGlobalSection
 EndGlobal
