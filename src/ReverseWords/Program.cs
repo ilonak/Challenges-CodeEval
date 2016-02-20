@@ -20,31 +20,41 @@ namespace Words_in_file_reversed
 
 		static void PrintReversedWords(string path)
 		{
-			string line;
-			StreamReader reader = new StreamReader(path);
-			string[] separator = { " ", ",", ".", "!", "?", ";", ":" };
 
-			while ((line = reader.ReadLine()) != null)
+			try
 			{
-				if (line != "")
-				{
-					int i;
-					string[] words = line.Split(separator, StringSplitOptions.RemoveEmptyEntries);
-					i = words.Length - 1;
+				string line;
+				StreamReader reader = new StreamReader(path);
+				string[] separator = { " ", ",", ".", "!", "?", ";", ":" };
 
-					while (i >= 0)
+				while ((line = reader.ReadLine()) != null)
+				{
+					if (line != "")
 					{
-						Console.Write("{0}", words[i]);
-						if (i != 0)
+						int i;
+						string[] words = line.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+						i = words.Length -1;
+
+						while (i >= 0)
 						{
-							Console.Write(" ");
+							Console.Write("{0}", words[i]);
+							if (i != 0)
+							{
+								Console.Write(" ");
+							}
+							i--;
 						}
-						i--;
+						Console.Write("\n\r");
 					}
-					Console.Write("\n\r");
 				}
+				reader.Close();
 			}
-			reader.Close();
+			catch (Exception e)
+			{
+				Console.WriteLine("The file could not be read.");
+				Console.WriteLine(e.Message);
+ 
+			}
 		}
 	}
 }
