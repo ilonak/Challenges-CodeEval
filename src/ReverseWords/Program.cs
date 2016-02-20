@@ -13,8 +13,14 @@ namespace Words_in_file_reversed
 		static void Main(string[] args)
 		{
 			string path = "D:/Training/sum-of-primes/test-input.txt";
-			string line;
 
+			PrintReversedWords(path);
+			Console.ReadLine();
+		}
+
+		static void PrintReversedWords(string path)
+		{
+			string line;
 			StreamReader reader = new StreamReader(path);
 			string[] separator = { " ", ",", ".", "!", "?", ";", ":" };
 
@@ -22,10 +28,10 @@ namespace Words_in_file_reversed
 			{
 				if (line != "")
 				{
-					string[] words = line.Split(separator, StringSplitOptions.RemoveEmptyEntries);
-
 					int i;
+					string[] words = line.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 					i = words.Length - 1;
+
 					while (i >= 0)
 					{
 						Console.Write("{0}", words[i]);
@@ -37,16 +43,8 @@ namespace Words_in_file_reversed
 					}
 					Console.Write("\n\r");
 				}
-
-
-				//for (int i = words.Length - 1; i >= 0; i--)
-				//{
-				//	Console.WriteLine("{0}", );
-				//}
 			}
-			sr.Close();
-			Console.ReadLine();
-
+			reader.Close();
 		}
 	}
 }
