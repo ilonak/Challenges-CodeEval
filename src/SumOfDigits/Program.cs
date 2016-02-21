@@ -23,37 +23,42 @@ namespace SumOfDigits
 				StreamReader reader = new StreamReader(path);
 				string line;
 
-				while ((line = reader.ReadLine())!= null)
+				while ((line = reader.ReadLine()) != null)
 				{
 					if (line != "")
 					{
 						int sum = 0;
 						bool parsed = true;
-						foreach (char c in line)
+						int c = 0;
+
+						while ((c <= line.Length - 1) && (parsed))
 						{
 							int digit;
-							parsed = Int32.TryParse(c.ToString(), out digit);
+							parsed = Int32.TryParse(line[c].ToString(), out digit);
+
 							if (!parsed)
 							{
 								parsed = false;
 								Console.WriteLine("Input string {0} is not in a correct format.", c);
+								sum = 0;
 							}
 							else
 							{
 								sum = sum + digit;
 							}
+							c++;
 						}
 						Console.WriteLine("The sum is {0}", sum);
 					}
 				}
 			}
+
+
 			catch (Exception e)
 			{
 				Console.WriteLine("Error during execution.");
 				Console.WriteLine(e.Message);
 			}
-
-
 		}
 	}
 }
