@@ -39,7 +39,7 @@ namespace SumOfDigits
 							if (!parsed)
 							{
 								parsed = false;
-								Console.WriteLine("Input string {0} is not in a correct format.", c);
+								//Console.WriteLine("Input string {0} is not in a correct format.", c);
 								sum = 0;
 							}
 							else
