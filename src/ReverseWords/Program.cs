@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 using System.IO;
 
 
-namespace Words_in_file_reversed
+namespace ReverseWords
 {
-	class Program
+	public class Program
 	{
 		static void Main(string[] args)
 		{
 			string path = "D:/Training/sum-of-primes/test-input.txt";
 
+			if (args.Length > 0)
+
 			PrintReversedWords(path);
 			Console.ReadLine();
 		}
 
-		static void PrintReversedWords(string path)
+		public static void PrintReversedWords(string path)
 		{
-
 			try
 			{
 				string line;
