@@ -12,15 +12,11 @@ namespace ReverseWords
 	{
 		static void Main(string[] args)
 		{
-			string path = "D:/Training/sum-of-primes/test-input.txt";
-
-			if (args.Length > 0)
-
-			PrintReversedWords(path);
-			Console.ReadLine();
+			if (args.Length > 0 && File.Exists(args[0]))
+				PrintReversedWords(args[0], Console.Write);
 		}
 
-		public static void PrintReversedWords(string path)
+		public static void PrintReversedWords(string path, Action<string> Write)
 		{
 			try
 			{
@@ -30,7 +26,8 @@ namespace ReverseWords
 
 				while ((line = reader.ReadLine()) != null)
 				{
-					if (line != "")
+					//if (line != "" && line != " ")
+					if (!String.IsNullOrWhiteSpace(line))
 					{
 						int i;
 						string[] words = line.Split(separator, StringSplitOptions.RemoveEmptyEntries);
@@ -38,24 +35,23 @@ namespace ReverseWords
 
 						while (i >= 0)
 						{
-							Console.Write("{0}", words[i]);
+							Write(string.Format("{0}", words[i]));
 							if (i != 0)
 							{
-								Console.Write(" ");
+								Write(" ");
 							}
 							i--;
 						}
-						Console.Write("\n\r");
+						Write(Environment.NewLine);
 					}
 				}
+				//Console.ReadLine();
 				reader.Close();
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("The file could not be read.");
-				Console.WriteLine(e.Message);
- 
-			}
+				Write("The file could not be read." + Environment.NewLine);
+ 			}
 		}
 	}
 }
