@@ -11,12 +11,13 @@ namespace SumOfDigits
 	{
 		static void Main(string[] args)
 		{
-			string path = "D:/Training/Challenges-CodeEval/src/SumOfDigits/input-text.txt";
-			GetSumOfDigits(path);
+			if (args.Length > 0 && File.Exists(args[0]))
+				//string path = "D:/Training/Challenges-CodeEval/src/SumOfDigits/input-text.txt";
+				GetSumOfDigits(args[0], Console.Write);
 			Console.ReadLine();
 		}
 
-		static void GetSumOfDigits(string path)
+		static void GetSumOfDigits(string path, Action<string> Write)
 		{
 			try
 			{
@@ -39,7 +40,8 @@ namespace SumOfDigits
 							if (!parsed)
 							{
 								parsed = false;
-								Console.WriteLine("Input string {0} is not in a correct format.", line[c]);
+								Write(string.Format("Input string {0} is not in a correct format.", line[c]));
+								Write(Environment.NewLine);
 								sum = 0;
 							}
 							else
@@ -49,17 +51,15 @@ namespace SumOfDigits
 							c++;
 						}
 						if (parsed)
-						Console.WriteLine("The sum is {0}", sum);
+							Write(string.Format("The sum is {0}", sum));
+						Write(Environment.NewLine);
 					}
 				}
-				Console.ReadLine();
 			}
-
 
 			catch (Exception e)
 			{
-				Console.WriteLine("Error during execution.");
-				Console.WriteLine(e.Message);
+				Write("Error during execution." + Environment.NewLine);
 			}
 		}
 	}
