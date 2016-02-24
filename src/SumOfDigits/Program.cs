@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace SumOfDigits
@@ -12,8 +8,9 @@ namespace SumOfDigits
 		static void Main(string[] args)
 		{
 			if (args.Length > 0 && File.Exists(args[0]))
-				//string path = "D:/Training/Challenges-CodeEval/src/SumOfDigits/input-text.txt";
+			{
 				GetSumOfDigits(args[0], Console.Write);
+			}
 			Console.ReadLine();
 		}
 
@@ -51,12 +48,13 @@ namespace SumOfDigits
 							c++;
 						}
 						if (parsed)
-							Write(string.Format("The sum is {0}", sum));
-						Write(Environment.NewLine);
+						{
+							Write(string.Format("{0}", sum));
+							Write(Environment.NewLine);
+						}
 					}
 				}
 			}
-
 			catch (Exception e)
 			{
 				Write("Error during execution." + Environment.NewLine);
