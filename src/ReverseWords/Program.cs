@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 
@@ -26,7 +22,6 @@ namespace ReverseWords
 
 				while ((line = reader.ReadLine()) != null)
 				{
-					//if (line != "" && line != " ")
 					if (!String.IsNullOrWhiteSpace(line))
 					{
 						int i;
@@ -45,7 +40,6 @@ namespace ReverseWords
 						Write(Environment.NewLine);
 					}
 				}
-				//Console.ReadLine();
 				reader.Close();
 			}
 			catch (Exception e)
