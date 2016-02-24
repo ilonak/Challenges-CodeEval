@@ -25,7 +25,7 @@ namespace SumOfDigits
 
 				while ((line = reader.ReadLine()) != null)
 				{
-					if (line != "")
+					if (!String.IsNullOrWhiteSpace(line))
 					{
 						int sum = 0;
 						bool parsed = true;
@@ -39,7 +39,7 @@ namespace SumOfDigits
 							if (!parsed)
 							{
 								parsed = false;
-								//Console.WriteLine("Input string {0} is not in a correct format.", c);
+								Console.WriteLine("Input string {0} is not in a correct format.", line[c]);
 								sum = 0;
 							}
 							else
@@ -48,9 +48,11 @@ namespace SumOfDigits
 							}
 							c++;
 						}
+						if (parsed)
 						Console.WriteLine("The sum is {0}", sum);
 					}
 				}
+				Console.ReadLine();
 			}
 
 
