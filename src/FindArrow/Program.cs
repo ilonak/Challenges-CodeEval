@@ -40,29 +40,17 @@ namespace FindArrow
 				int i = 0;
 				while (i < line.Length - 4)
 				{
-					//string subS = line.Substring(i, 5);
-					//if (subS == ">>-->" || subS == "<--<<")
-					//{
-					//	count++;
-					//}
-					//i++;
-
-
-					char ch = line[i];
-					if (ch == '>')
+					if (line[i + 2] == '-')
 					{
-						if (line[i + 1] == '>' && line[i + 2] == '-' && line[i + 3] == '-' && line[i + 4] == '>')
+						if (line[i] == '>' && line[i + 1] == '>' && line[i + 3] == '-' && line[i + 4] == '>')
 						{
 							count++;
-							i++;
+							i += 3;
 						}
-					}
-					else if (ch == '<')
-					{
-						if (line[i + 1] == '-' && line[i + 2] == '-' && line[i + 3] == '<' && line[i + 4] == '<')
+						else if (line[i] == '<' && line[i + 1] == '-' && line[i + 3] == '<' && line[i + 4] == '<')
 						{
 							count++;
-							i++;
+							i += 3;
 						}
 					}
 					i++;
