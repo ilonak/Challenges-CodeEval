@@ -53,6 +53,12 @@
     <Compile Include="FindArrowTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FindArrow\FindArrow.csproj">
+      <Project>{8300ee05-6147-4b20-9665-fa4628c901b0}</Project>
+      <Name>FindArrow</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

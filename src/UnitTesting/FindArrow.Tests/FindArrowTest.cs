@@ -14,6 +14,23 @@ namespace FindArrow.Tests
 			set { testContextInstance = value; }
 		}
 
+		[TestMethod]
+		public void AnalyzeOneLine_EmptyLine_ExpectedZero()
+		{
+			var actual = Program.AnalyzeOneLine(string.Empty);
+			//Program.PrintReversedWords("not exist", (s) => { actual += s; });
+			Assert.AreEqual(0, actual);
+		}
+
+		[TestMethod]
+		public void AnalyzeOneLine_OneArrow_ExpectedOne()
+		{
+			var actual = Program.AnalyzeOneLine("------->>-->---------------");
+			//Program.PrintReversedWords("not exist", (s) => { actual += s; });
+			Assert.AreEqual(1, actual);
+		}
+
+
 	//	[TestMethod]
 	//	public void PrintReversedWords_NotExistingFile_ExpectedErrorMessage()
 	//	{
