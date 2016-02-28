@@ -38,6 +38,31 @@ namespace FindArrow.Tests
 			Assert.AreEqual(2, actual);
 		}
 
+		[TestMethod]
+		public void AnalyzeOneLine_LeftDirectionArrows_ExpectedThree()
+		{
+			var actual = Program.AnalyzeOneLine("->>>-->>>-->-->>-->---->");
+			//Program.PrintReversedWords("not exist", (s) => { actual += s; });
+			Assert.AreEqual(3, actual);
+		}
+
+		[TestMethod]
+		public void AnalyzeOneLine_RightDirectionArrows_ExpectedFour()
+		{
+			var actual = Program.AnalyzeOneLine("<--<<<<--<<--<--<--<<<<--<<-");
+			//Program.PrintReversedWords("not exist", (s) => { actual += s; });
+			Assert.AreEqual(4, actual);
+		}
+
+		[TestMethod]
+		public void AnalyzeOneLine_SpacesAndArrows_ExpectedThree()
+		{
+			var actual = Program.AnalyzeOneLine("<--<<<<--<<--     <<<--<<-");
+			//Program.PrintReversedWords("not exist", (s) => { actual += s; });
+			Assert.AreEqual(3, actual);
+		}
+
+
 	//	[TestMethod]
 	//	public void PrintReversedWords_NotExistingFile_ExpectedErrorMessage()
 	//	{
