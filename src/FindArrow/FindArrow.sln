@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindArrow", "FindArrow.csproj", "{8300EE05-6147-4B20-9665-FA4628C901B0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTesting", "UnitTesting", "{E0768394-9FC0-4993-8E3F-1E4291DDC6CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindArrow.Tests", "..\UnitTesting\FindArrow.Tests\FindArrow.Tests.csproj", "{A485965B-A55C-4FC7-BA79-16682452CF2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,15 @@ Global
 		{8300EE05-6147-4B20-9665-FA4628C901B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8300EE05-6147-4B20-9665-FA4628C901B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8300EE05-6147-4B20-9665-FA4628C901B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A485965B-A55C-4FC7-BA79-16682452CF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A485965B-A55C-4FC7-BA79-16682452CF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A485965B-A55C-4FC7-BA79-16682452CF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A485965B-A55C-4FC7-BA79-16682452CF2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A485965B-A55C-4FC7-BA79-16682452CF2F} = {E0768394-9FC0-4993-8E3F-1E4291DDC6CA}
 	EndGlobalSection
 EndGlobal
