@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FindArrow
 {
@@ -21,8 +17,6 @@ namespace FindArrow
 			{
 				string line;
 				StreamReader reader = new StreamReader(path);
-				//				string[] separator = { " ", ",", ".", "!", "?", ";", ":" };
-
 				while ((line = reader.ReadLine()) != null)
 				{
 					int count = AnalyzeOneLine(line);
@@ -44,21 +38,28 @@ namespace FindArrow
 			if (!String.IsNullOrWhiteSpace(line) && line.Length > 4)
 			{
 				int i = 0;
-				//bool patternStarted = false;
 				while (i < line.Length - 4)
 				{
-					//string ch = line[i].ToString();
-					if (line[i].ToString() == ">")
+					//string subS = line.Substring(i, 5);
+					//if (subS == ">>-->" || subS == "<--<<")
+					//{
+					//	count++;
+					//}
+					//i++;
+
+
+					char ch = line[i];
+					if (ch == '>')
 					{
-						if (line[i + 1].ToString() == ">" && line[i + 2].ToString() == "-" && line[i + 3].ToString() == "-" && line[i + 4].ToString() == ">")
+						if (line[i + 1] == '>' && line[i + 2] == '-' && line[i + 3] == '-' && line[i + 4] == '>')
 						{
 							count++;
 							i++;
 						}
 					}
-					if (line[i].ToString() == "<")
+					else if (ch == '<')
 					{
-						if (line[i + 1].ToString() == "-" && line[i + 2].ToString() == "-" && line[i + 3].ToString() == "<" && line[i + 4].ToString() == "<")
+						if (line[i + 1] == '-' && line[i + 2] == '-' && line[i + 3] == '<' && line[i + 4] == '<')
 						{
 							count++;
 							i++;
@@ -66,6 +67,26 @@ namespace FindArrow
 					}
 					i++;
 				}
+
+
+				//	if (line[i].ToString() == ">")
+				//	{
+				//		if (line[i + 1].ToString() == ">" && line[i + 2].ToString() == "-" && line[i + 3].ToString() == "-" && line[i + 4].ToString() == ">")
+				//		{
+				//			count++;
+				//			i++;
+				//		}
+				//	}
+				//	if (line[i].ToString() == "<")
+				//	{
+				//		if (line[i + 1].ToString() == "-" && line[i + 2].ToString() == "-" && line[i + 3].ToString() == "<" && line[i + 4].ToString() == "<")
+				//		{
+				//			count++;
+				//			i++;
+				//		}
+				//	}
+				//	i++;
+				//}
 			}
 			return count;
 		}

@@ -62,6 +62,13 @@ namespace FindArrow.Tests
 			Assert.AreEqual(3, actual);
 		}
 
+		[TestMethod]
+		public void AnalyzeOneLine_Ending_ExpectedThree()
+		{
+			var actual = Program.AnalyzeOneLine("---<--<<--<<");
+			//Program.PrintReversedWords("not exist", (s) => { actual += s; });
+			Assert.AreEqual(2, actual);
+		}
 
 	//	[TestMethod]
 	//	public void PrintReversedWords_NotExistingFile_ExpectedErrorMessage()
