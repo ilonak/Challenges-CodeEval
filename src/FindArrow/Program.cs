@@ -28,8 +28,8 @@ namespace FindArrow
 					int count = AnalyzeOneLine(line);
 					Write(count.ToString());
 					Write(Environment.NewLine);
-					Console.ReadLine();
 				}
+				Console.ReadLine();
 				reader.Close();
 			}
 			catch (Exception e)
