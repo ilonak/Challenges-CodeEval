@@ -23,12 +23,11 @@ namespace FindArrow
 					Write(count.ToString());
 					Write(Environment.NewLine);
 				}
-				Console.ReadLine();
 				reader.Close();
 			}
-			catch (Exception e)
+			catch (Exception ex)
 			{
-				Write("The file could not be read." + Environment.NewLine);
+				Write("The file could not be read." + ex.ToString() + Environment.NewLine);
 			}
 		}
 
@@ -55,26 +54,6 @@ namespace FindArrow
 					}
 					i++;
 				}
-
-
-				//	if (line[i].ToString() == ">")
-				//	{
-				//		if (line[i + 1].ToString() == ">" && line[i + 2].ToString() == "-" && line[i + 3].ToString() == "-" && line[i + 4].ToString() == ">")
-				//		{
-				//			count++;
-				//			i++;
-				//		}
-				//	}
-				//	if (line[i].ToString() == "<")
-				//	{
-				//		if (line[i + 1].ToString() == "-" && line[i + 2].ToString() == "-" && line[i + 3].ToString() == "<" && line[i + 4].ToString() == "<")
-				//		{
-				//			count++;
-				//			i++;
-				//		}
-				//	}
-				//	i++;
-				//}
 			}
 			return count;
 		}
