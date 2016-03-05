@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringToLower", "StringToLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringToLower.Tests", "..\UnitTesting\StringToLower.Tests\StringToLower.Tests.csproj", "{F482A727-2327-40FC-9BFD-88F725188A15}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{AB8498D1-AB35-4FF7-802A-7E49D50CC4AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F482A727-2327-40FC-9BFD-88F725188A15} = {AB8498D1-AB35-4FF7-802A-7E49D50CC4AD}
 	EndGlobalSection
 EndGlobal

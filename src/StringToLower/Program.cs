@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace StringToLower
@@ -14,7 +10,7 @@ namespace StringToLower
 			if (args.Length > 0 && File.Exists(args[0]))
 			{
 				ReadFile(args[0], Console.Write);
-				Console.ReadLine();
+				//Console.ReadLine();
 			}
 		}
 
@@ -36,7 +32,7 @@ namespace StringToLower
 			}
 		}
 
-		private static void ConvertOneLine(string line, Action<string> Write)
+		public static void ConvertOneLine(string line, Action<string> Write)
 		{
 			//if (!String.IsNullOrWhiteSpace(line))
 			//{
