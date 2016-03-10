@@ -12,64 +12,136 @@ namespace MaxStringBeauty
 		static void Main(string[] args)
 		{
 			if (args.Length > 0 && File.Exists(args[0]))
-				GetDictOfUniqueChar(args[0], Console.Write);
+			{
+				int total = 0;
+				//total = DetermineMaxValue(GetDictOfUniqueChar(args[0], Console.Write));
+				total = GetDictOfUniqueChar(args[0], Console.Write);
+				Console.WriteLine(total);
+				Console.ReadLine();
+			}
 		}
-		
-		public static void GetDictOfUniqueChar(string path, Action<string> Write)
+
+		//public static Dictionary<string, int> GetDictOfUniqueChar(string path, Action<string> Write)
+		public static int GetDictOfUniqueChar(string path, Action<string> Write)
 		{
-			try
+			//try
+			//{
+
+			StreamReader sr = new StreamReader(path);
+			string line = sr.ReadLine();
+			//
+			//String found = string.Empty;
+			Dictionary<string, int> foundUnique = new Dictionary<string, int>();
+			foreach (char c in line)
 			{
-				string line;
-				StreamReader sr = new StreamReader(path);
-				while ((line = sr.ReadLine()) != null)
+				string s = c.ToString();
+
+				if (!foundUnique.ContainsKey(s))
 				{
-					String found = string.Empty;
-					Dictionary<string, int> foundUnique = new Dictionary<string, int>();
-					foreach (char c in line)
-					{
-						string s = c.ToString();
-
-						if (!foundUnique.ContainsKey(s))
-						{
-							foundUnique.Add(s, 1);
-						}
-						else
-						{
-							int count;
-							foundUnique.TryGetValue(s, out count);
-							foundUnique.Remove(s);
-							foundUnique.Add(s, count + 1);
-						}
-
-					}
+					foundUnique.Add(s, 1);
 				}
+				else
+				{
+					int count;
+					foundUnique.TryGetValue(s, out count);
+					foundUnique.Remove(s);
+					foundUnique.Add(s, count + 1);
+				}
+
 			}
-			catch (Exception e)
+			//return foundUnique;
+			//}
+
+			//}
+			//catch (Exception e)
+			//{
+			//	Write("Cannot process file." + e.Message + Environment.NewLine);
+			//}
+			//}
+
+			//
+			int beautyValue = 26;
+			int totalBeautyValue = 0;
+
+			//Dictionary<string, int>.ValueCollection valuesColl = foundUnique.Values;
+			var valuesColl = foundUnique.Values.OrderByDescending(x => x);
+			foreach (int n in valuesColl)
 			{
-				Write("Cannot process file." + e.Message + Environment.NewLine);
+				int charBeauty = n * beautyValue;
+				beautyValue--;
+				totalBeautyValue = totalBeautyValue + charBeauty;
 			}
+
+			return totalBeautyValue;
+
+			//while (foundUnique != null)
+			//{
+			//	int maxCharsCount = 0;
+			//	foreach (KeyValuePair<string, int> pair in foundUnique)
+			//	{
+			//		String notedKey = "";
+			//		if (pair.Value > maxCharsCount)
+			//		{
+			//			maxCharsCount = pair.Value;
+			//			notedKey = pair.Key;
+			//			totalBeautyValue = maxCharsCount * beautyValue;
+			//			beautyValue--;
+			//			foundUnique.Remove(notedKey);
+
+			//		}
+			//		 (pair.Value == maxCharsCount)
+			//		{
+			//			maxCharsCount = pair.Value;
+			//			notedKey = pair.Key;
+			//			totalBeautyValue = maxCharsCount * beautyValue;
+			//			foundUnique.Remove(notedKey);
+			//		}
+			//	}
+			//	}
+			//	return totalBeautyValue;
+			//	//}
+			//}
 		}
 	}
 }
 
-		//public static string ReadOneLine(string path, Action<string> Write)
-		//{
-		//					string line;
-		//	try
-		//	{
-		//		StreamReader sr = new StreamReader(path);
-		//		while ((line = sr.ReadLine()) != null)
-		//		{
-		//			GetDictOfUniqueChar(line);
-		//		}
 
-		//	}
-		//	catch(Exception e)
-		//	{
-		//		Write("Cannot process file." + e.Message + Environment.NewLine);
-		//	}
-		//					return line;
-		//}
+
+
+
+//Int maxValue = DetermineMaxValue();
+//Int maxBeauty = 26;
+
+//While (not end of dictionary)
+//{
+//Public int AssignMaxBeauty()
+//{
+//Int maxCharBeauty = maxValue * maxBeauty;
+//maxBeauty --;
+//}
+//}
+//Int maxStringBeauty = maxCharBeuty + maxCharBeauty;
+//}
+
+
+//public static string ReadOneLine(string path, Action<string> Write)
+//{
+//					string line;
+//	try
+//	{
+//		StreamReader sr = new StreamReader(path);
+//		while ((line = sr.ReadLine()) != null)
+//		{
+//			GetDictOfUniqueChar(line);
+//		}
+
+//	}
+//	catch(Exception e)
+//	{
+//		Write("Cannot process file." + e.Message + Environment.NewLine);
+//	}
+//					return line;
+//}
 
 //		public int DetermineMaxValue(Dictionary foundUnique)
 //{
@@ -115,4 +187,4 @@ namespace MaxStringBeauty
 //}
 //Int maxStringBeauty = maxCharBeuty + maxCharBeauty;
 //}
-		
+
