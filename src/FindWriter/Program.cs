@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+
 namespace FindWriter
 {
 	class Program
@@ -31,35 +29,37 @@ namespace FindWriter
 		{
 			if (!String.IsNullOrWhiteSpace(line))
 			{
-				List<string> listCodedChars = new List<string>();
+				//List<string> listCodedChars = new List<string>();
 				string[] delimiters = { " " };
-				int indexPipe = 0;
-				bool pipePresent = false;
+				int indexPipe = line.IndexOf("|");
+				string stringCodedChars = line.Substring(0, indexPipe);
 
-				foreach (char c in line)
-				{
-					if (!pipePresent)
-					{
-						if ((c.ToString()) != "|")
-						{
-							listCodedChars.Add(c.ToString());
-						}
-						else
-						{
-							pipePresent = true;
-							indexPipe = line.IndexOf(c.ToString());
-						}
-					}
-				}
+				//bool pipePresent = false;
+
+				//foreach (char c in line)
+				//{
+				//	if (!pipePresent)
+				//	{
+				//		if ((c.ToString()) != "|")
+				//		{
+				//			listCodedChars.Add(c.ToString());
+				//		}
+				//		else
+				//		{
+				//			pipePresent = true;
+				//			indexPipe = line.IndexOf(c.ToString());
+				//		}
+				//	}
+				//}
 				string stringAfterPipe = line.Substring(indexPipe + 1);
 				string[] arrayKeys = stringAfterPipe.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
 
 				foreach (string i in arrayKeys)
 				{
-					Write(listCodedChars[Int32.Parse(i) - 1]);
+					Write((stringCodedChars[Int32.Parse(i) - 1]).ToString());
+					//Write(listCodedChars[Int32.Parse(i) - 1]);
 				}
 				Write(Environment.NewLine);
-				//Console.ReadLine();
 			}
 		}
 	}
