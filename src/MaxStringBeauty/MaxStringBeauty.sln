@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxStringBeauty", "MaxStringBeauty.csproj", "{30A5F28B-F135-4BE0-9E93-9C4C4A55E7B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{3ACC105E-4C95-4640-B8D6-FCB370975DB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxStringBeatyTests", "..\UnitTesting\MaxStringBeatyTests\MaxStringBeatyTests.csproj", "{11A37CB5-43E3-438C-B5E7-0B55AB8FE37B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,15 @@ Global
 		{30A5F28B-F135-4BE0-9E93-9C4C4A55E7B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30A5F28B-F135-4BE0-9E93-9C4C4A55E7B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30A5F28B-F135-4BE0-9E93-9C4C4A55E7B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11A37CB5-43E3-438C-B5E7-0B55AB8FE37B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11A37CB5-43E3-438C-B5E7-0B55AB8FE37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11A37CB5-43E3-438C-B5E7-0B55AB8FE37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11A37CB5-43E3-438C-B5E7-0B55AB8FE37B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11A37CB5-43E3-438C-B5E7-0B55AB8FE37B} = {3ACC105E-4C95-4640-B8D6-FCB370975DB7}
 	EndGlobalSection
 EndGlobal
